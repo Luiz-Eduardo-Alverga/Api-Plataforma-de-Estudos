@@ -1,0 +1,31 @@
+<?php
+
+return [
+    "acquirers" => "Adquirente",
+    "addresses" => "Endereço",
+    "assessments" => "Avaliação",
+    "banks" => "Banco",
+    "card_brands" => "Bandeira",
+    "companies" => "Empresa",
+    "employees" => "Funcionário",
+    "evolutions" => "Evolução",
+    "finances" => "Financeiro",
+    "finances_categories" => "Categoria",
+    "finances_installments_payments" => "Pagamento",
+    "health_insurance_providers" => "Convênio",
+    "health_plans" => "Plano de saúde",
+    "medical_histories" => "Anamnese",
+    "patients_assessments" => "Avaliação",
+    "patients_evolutions" => "Evolução",
+    "patients_medical_histories" => "Anamnese",
+    "patients_companies" => "Paciente",
+    "patients_health_plans" => "Plano de saúde",
+    "payment_methods" => "Forma de pagamento",
+    "positions" => "Função",
+    "procedures" => "Procedimento",
+    "roles" => "Perfil de acesso",
+    "schedules" => "Agendamento",
+    "schedules_procedures" => "Procedimento",
+    "user_companies" => "Usuário",
+    "wallets" => "Carteira"
+];

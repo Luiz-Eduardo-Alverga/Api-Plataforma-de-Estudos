@@ -10,7 +10,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed $name
  * @property mixed $email
  * @property mixed $phone
- * @property mixed $specialty
+ * @property mixed $speciality
  * @property mixed $admission_date
  * @property mixed $active
  */
@@ -28,7 +28,7 @@ class TeacherResource extends JsonResource
             'name' => $this->name,
             'email' => $this->email,
             'phone' => $this->phone,
-            'specialty' => $this->specialty,
+            'speciality' => $this->speciality,
             'admission_date' => $this->admission_date,
             'active' => $this->active,
         ];
