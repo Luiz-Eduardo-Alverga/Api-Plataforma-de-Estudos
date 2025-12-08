@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Teacher extends Model
@@ -16,4 +17,8 @@ class Teacher extends Model
         'admission_date',
         'active',
     ];
+
+    public function subjects(): HasMany {
+        return $this->hasMany(Subject::class);
+    }
 }

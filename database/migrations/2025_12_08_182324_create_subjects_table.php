@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teachers', function (Blueprint $table) {
+        Schema::create('subjects', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->string('email', 255)->nullable();
-            $table->string('phone', 255)->nullable();
-            $table->string('speciality', 255)->nullable();
-            $table->date('admission_date')->nullable();
+            $table->decimal('workload_hours', 5, 2);
+            $table->text('description')->nullable();
+            $table->foreignId('teacher_id')
+                  ->constrained('teachers');
+            $table->string('color', 7)->default('#000000');
             $table->tinyInteger('active')->default(1);
             $table->timestamps();
             $table->softDeletes();
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('teachers');
+        Schema::dropIfExists('subjects');
     }
 };

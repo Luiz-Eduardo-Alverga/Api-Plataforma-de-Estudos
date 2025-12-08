@@ -13,7 +13,7 @@ class TeacherController extends Controller
     public function index()
     {
         return TeacherResource::collection(
-            Teacher::query()->paginate()
+            Teacher::query()->paginate(10)
         );
     }
 
@@ -32,7 +32,7 @@ class TeacherController extends Controller
      * Display the specified resource.
      */
     public function show(Teacher $teacher){
-        return TeacherResource::make($teacher);
+        return response()->json(TeacherResource::make($teacher));
     }
 
 

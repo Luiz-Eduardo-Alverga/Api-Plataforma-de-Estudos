@@ -8,13 +8,13 @@ use Illuminate\Http\Resources\Json\JsonResource;
 /**
  * @property mixed $id
  * @property mixed $name
- * @property mixed $email
- * @property mixed $phone
- * @property mixed $speciality
- * @property mixed $admission_date
+ * @property mixed $workload_hours
+ * @property mixed $description
+ * @property mixed $teacher_id
+ * @property mixed $color
  * @property mixed $active
  */
-class TeacherResource extends JsonResource
+class SubjectResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -26,10 +26,10 @@ class TeacherResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'email' => $this->email,
-            'phone' => $this->phone,
-            'speciality' => $this->speciality,
-            'admissionDate' => $this->admission_date,
+            'workload_hours' => $this->workload_hours,
+            'description' => $this->description,
+            'teacher_id' => $this->teacher_id,
+            'color' => $this->color,
             'active' => $this->active,
         ];
     }
