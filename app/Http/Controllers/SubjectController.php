@@ -14,7 +14,7 @@ class SubjectController extends Controller
     public function index()
     {
         return SubjectResource::collection(
-            Subject::query()->paginate(10)
+            Subject::query()->with("teacher")->paginate(10)
         );
     }
 
@@ -25,7 +25,7 @@ class SubjectController extends Controller
         $data = $request->validated();
 
         return SubjectResource::make(
-            Subject::query()->create($data)
+            Subject::query()->with("teacher")->create($data)
         );
     }
 
@@ -33,7 +33,7 @@ class SubjectController extends Controller
      * Display the specified resource.
      */
     public function show(Subject $subject){
-        return response()->json(SubjectResource::make($subject));
+        return response()->json(SubjectResource::make($subject)->with("teacher"));
     }
 
     /**
@@ -45,7 +45,7 @@ class SubjectController extends Controller
 
         $subject->update($data);
 
-        return response()->json(SubjectResource::make($subject));
+        return response()->json(SubjectResource::make($subject)->with("teacher"));
     }
 
     /**

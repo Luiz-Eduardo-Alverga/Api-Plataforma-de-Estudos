@@ -19,6 +19,6 @@ class Subject extends Model
     ];
 
      public function teacher (): BelongsTo {
-         return $this->belongsTo(Teacher::class, 'teacher_id');
+         return $this->belongsTo(Teacher::class)->withTrashed();
      }
 }
