@@ -33,7 +33,9 @@ class SubjectController extends Controller
      * Display the specified resource.
      */
     public function show(Subject $subject){
-        return response()->json(SubjectResource::make($subject)->with("teacher"));
+        return response()->json(
+            SubjectResource::make($subject->load("teacher"))
+        );
     }
 
     /**
@@ -45,7 +47,7 @@ class SubjectController extends Controller
 
         $subject->update($data);
 
-        return response()->json(SubjectResource::make($subject)->with("teacher"));
+        return response()->json(SubjectResource::make($subject->load("teacher")));
     }
 
     /**

@@ -29,6 +29,7 @@ class StoreSubjectRequest extends FormRequest
             "workload_hours" => ["required", "decimal:0,2"],
             "teacher_id" => ["required", Rule::exists(Teacher::class, 'id')],
             "active" => ["boolean"],
+            "color" => ["required", "string", "max:255"],
         ];
     }
 }
