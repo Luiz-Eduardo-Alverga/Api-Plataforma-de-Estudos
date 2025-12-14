@@ -2,11 +2,12 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Subject;
 use App\Models\Teacher;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateSubjectRequest extends FormRequest
+class UpdateClassroomRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +25,14 @@ class UpdateSubjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => [ "string", "max:255"],
-            "description" => [ "string", "max:500"],
-            "workload_hours" => ["decimal:0,2"],
-            "teacher_id" => [Rule::exists(Teacher::class, 'id')],
-            "active" => ["boolean"],
-            "color" => [ "nullable"],
+            "title" => ["string"],
+            "description" => ["string"],
+            "subject_id" => ["integer", Rule::exists(Subject::class, 'id')],
+            "teacher_id" => ["integer", Rule::exists(Teacher::class, 'id')],
+            "starts_at" => ["date"],
+            "duration_minutes" => [ "integer"],
+            "type" => [Rule::in(['presencial', 'online', 'hibrida'])],
+            "status" => [Rule::in(['agendada', 'concluida', 'cancelada'])]
         ];
     }
 }

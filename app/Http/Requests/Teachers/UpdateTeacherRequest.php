@@ -25,7 +25,7 @@ class UpdateTeacherRequest extends FormRequest
             "name" => ["string", "max:255"],
             "email" => [ "string", "email", "max:255"],
             "phone" => [ "string", "max:255"],
-            "speciality" => [ "string", "max:255"],
+            "speciality" => [ "nullable", "max:255"],
             "admission_date" => ["nullable", "date"],
             "active" => ["boolean"]
         ];

@@ -25,7 +25,7 @@ class StoreTeacherRequest extends FormRequest
             "name" => ["required", "string", "max:255"],
             "email" => ["nullable", "string", "email", "max:255"],
             "phone" => ["nullable", "string", "max:255"],
-            "speciality" => ["nullable", "string", "max:255"],
+            "speciality" => ["nullable", "max:255"],
             "admission_date" => ["nullable", "date"],
             "active" => ["boolean", "nullable"]
         ];

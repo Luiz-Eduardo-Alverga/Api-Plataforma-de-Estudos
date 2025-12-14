@@ -21,4 +21,9 @@ class Teacher extends Model
     public function subjects(): HasMany {
         return $this->hasMany(Subject::class);
     }
+
+    public function classes(): HasMany
+    {
+        return $this->hasMany(Classroom::class, 'subject_id');
+    }
 }
