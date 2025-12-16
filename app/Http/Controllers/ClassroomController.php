@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Classrooms\StoreClassroomRequest;
+use App\Http\Requests\Classrooms\UpdateClassroomRequest;
 use App\Http\Resources\ClassroomResource;
 use App\Models\Classroom;
-use App\Http\Requests\StoreClassroomRequest;
-use App\Http\Requests\UpdateClassroomRequest;
 
 class ClassroomController extends Controller
 {

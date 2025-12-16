@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Exams;
 
 use App\Models\Subject;
 use App\Models\Teacher;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class UpdateClassroomRequest extends FormRequest
+class UpdateExamRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -32,7 +32,8 @@ class UpdateClassroomRequest extends FormRequest
             "starts_at" => ["date"],
             "duration_minutes" => [ "integer"],
             "type" => [Rule::in(['presencial', 'online', 'hibrida'])],
-            "status" => [Rule::in(['agendada', 'concluida', 'cancelada'])]
+            "status" => [Rule::in(['agendada', 'concluida', 'cancelada'])],
+            "grade" => [ "decimal:0,2"],
         ];
     }
 }

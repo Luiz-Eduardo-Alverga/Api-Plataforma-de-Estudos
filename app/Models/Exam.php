@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Classroom extends Model
+class Exam extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'classrooms';
+    protected $table = 'exams';
 
     protected $fillable = [
         'title',
@@ -21,6 +21,7 @@ class Classroom extends Model
         'duration_minutes',
         'type',
         'status',
+        'grade',
     ];
 
     public function teacher(): BelongsTo
@@ -32,5 +33,4 @@ class Classroom extends Model
     {
         return $this->belongsTo(Subject::class);
     }
-
 }
